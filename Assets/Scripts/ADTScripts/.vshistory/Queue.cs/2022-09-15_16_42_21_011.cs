@@ -1,10 +1,11 @@
 ﻿using ADTLinkedList;
+using Node;
 
 namespace ADTQueue
 {
     public class Queue<X>
     {
-        private LinkedList<X> linkedList;
+        private readonly LinkedList<X> linkedList;
         
         public Queue()
         {
@@ -16,14 +17,10 @@ namespace ADTQueue
             linkedList.AddToTail(data);
         }
 
-        public void Dequeue()
-        {
-            linkedList.DeleteHead();
-        }
-
         public X Peek()
         {
             return linkedList.Head.Data;
         }
+
     }
 }

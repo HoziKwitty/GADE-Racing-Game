@@ -1,10 +1,11 @@
 ﻿using ADTLinkedList;
+using Node;
 
 namespace ADTQueue
 {
     public class Queue<X>
     {
-        private LinkedList<X> linkedList;
+        private readonly LinkedList<X> linkedList;
         
         public Queue()
         {
@@ -25,5 +26,6 @@ namespace ADTQueue
         {
             return linkedList.Head.Data;
         }
+
     }
 }

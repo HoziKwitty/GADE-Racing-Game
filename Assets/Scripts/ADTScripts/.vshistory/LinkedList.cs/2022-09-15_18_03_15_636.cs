@@ -54,7 +54,7 @@ namespace ADTLinkedList
 
         public void DeleteHead()
         {
-            head.NextNode = head;
+            this.head.NextNode = head;
         }
 
         public void AddToTail(X data)

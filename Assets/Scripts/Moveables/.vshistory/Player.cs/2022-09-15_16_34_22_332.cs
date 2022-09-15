@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float forwardSpeed = 50f;
+    public float forwardSpeed = 40f;
     public float rightSpeed = 5f;
     public float idleSpeed = 30f;
 

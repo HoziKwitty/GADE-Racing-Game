@@ -52,11 +52,6 @@ namespace ADTLinkedList
             Size += 1;
         }
 
-        public void DeleteHead()
-        {
-            head.NextNode = head;
-        }
-
         public void AddToTail(X data)
         {
             if (size == 0)

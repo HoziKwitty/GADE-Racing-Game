@@ -25,5 +25,6 @@ namespace ADTQueue
         {
             return linkedList.Head.Data;
         }
+
     }
 }

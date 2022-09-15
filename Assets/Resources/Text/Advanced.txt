@@ -1,0 +1,7 @@
+You've just entered Advanced Race mode! How's about I tell you a little about how it works.
+In this mode, you will be racing against other racers.
+These racers are hardcore though, so watch your back!
+If you need a bit of a warm-up, try out the Beginner Race Mode.
+Use the A and D keys to move around the map.
+Now get out there!
+End.

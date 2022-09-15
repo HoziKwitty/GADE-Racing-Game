@@ -1,7 +1,0 @@
-You've just entered Checkpoint Race mode! How's about I tell you a little about how it works.
-In this mode, you will be racing against the clock to reach the finish line.
-On the way, you'll find checkpoints that you can use to give yourself some extra time.
-If the time runs out, you lose.
-Use the A and D keys to move around the map.
-Now get out there!
-End.

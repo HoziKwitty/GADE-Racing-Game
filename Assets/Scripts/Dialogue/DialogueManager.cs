@@ -2,47 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Dialogue types
-    public string raceType = "checkpoint";
-    public string checkpoint = "Assets/Text/checkpoint.txt";
-    public string beginner = "Assets/Text/checkpoint.txt";
-    public string advanced = "Assets/Text/checkpoint.txt";
+    public string inMode;
+    public string mode;
 
-    // Dialogue storage
-    private List<string> dialogue = new List<string>();
-    public int count = 0;
-
-    // Image Storage
-    public List<Sprite> portraits = new List<Sprite>();
-
-    // Dialogue display
+    [Header("UI Elements")]
     public Image portrait;
     public Text speaker;
     public Text dialogueBox;
     public Text nextButton;
 
+    public List<Sprite> portraits = new List<Sprite>();
+
+    public Queue<string> dialogueQueue;
+
     private void Start()
     {
-        switch (raceType)
+        switch (inMode)
         {
-            case "checkpoint":
-                GetDialogue(checkpoint);
+            case "Text/Checkpoint":
+                mode = "Checkpoint";
                 portrait.sprite = portraits[0];
                 speaker.text = "Checkpoint Race Manager";
                 break;
 
-            case "beginner":
-                GetDialogue(beginner);
+            case "Text/Beginner":
+                mode = "Beginner";
                 portrait.sprite = portraits[1];
                 speaker.text = "Beginner Race Manager";
                 break;
 
-            case "advanced":
-                GetDialogue(advanced);
+            case "Text/Advanced":
+                mode = "Advanced";
                 portrait.sprite = portraits[2];
                 speaker.text = "Advanced Race Manager";
                 break;
@@ -51,32 +45,38 @@ public class DialogueManager : MonoBehaviour
                 break;
         }
 
-        dialogueBox.text = "" + dialogue[count];
+        GetDialogue(inMode);
     }
 
     public void GetDialogue(string path)
     {
-        StreamReader sr = new StreamReader(path);
+        var file = Resources.Load<TextAsset>(path);
+        string[] dialogueLines = file.text.Split("\n");
 
-        while (!sr.EndOfStream)
+        dialogueQueue = new Queue<string>();
+
+        foreach (string line in dialogueLines)
         {
-            dialogue.Add(sr.ReadLine());
+            dialogueQueue.Enqueue(line);
         }
 
-        sr.Close();
+        dialogueBox.text = dialogueQueue.Peek();
     }
 
     public void NextDialogue()
     {
-        count++;
+        dialogueQueue.Dequeue();
 
-        if (count < dialogue.Count - 1)
+        if (dialogueQueue.Peek() != "End.")
         {
-            dialogueBox.text = "" + dialogue[count];
+            dialogueBox.text = dialogueQueue.Peek();
         }
         else
         {
-            nextButton.text = "Proceed to Race!";
+            nextButton.text = "Proceed to race!";
+
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            SceneManager.LoadScene(mode + " Race");
         }
     }
 }

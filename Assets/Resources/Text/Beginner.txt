@@ -1,0 +1,7 @@
+You've just entered Beginner Race mode! How's about I tell you a little about how it works.
+In this mode, you will be racing against other racers.
+These racers are not the brightest bulbs in the box, so you shouldn't have too much trouble with them.
+If you want a bigger challenge though, try out the Advanced Race Mode!
+Use the A and D keys to move around the map.
+Now get out there!
+End.

@@ -5,7 +5,10 @@ public class Timer : MonoBehaviour
 {
     public static Timer instance;
 
-    public float startTime = 60f;
+    public float startTime = 3f;
+
+    [HideInInspector]
+    public GameObject player;
 
     private float currentTime;
     public float GetCurrentTime
@@ -24,6 +27,8 @@ public class Timer : MonoBehaviour
     void Start()
     {
         currentTime = startTime;
+
+        player = GameObject.Find("Player");
     }
 
     void Update()
@@ -34,7 +39,11 @@ public class Timer : MonoBehaviour
 
         if (currentTime <= 0)
         {
-            enabled = false;
+            timerText.text = "Time Remaining: 0";
+
+            CheckpointManager.instance.results.text = "Time has run out!";
+
+            Time.timeScale = 0;
         }
     }
 }

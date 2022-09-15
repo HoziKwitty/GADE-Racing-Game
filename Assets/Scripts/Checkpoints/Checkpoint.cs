@@ -10,6 +10,6 @@ public class Checkpoint : MonoBehaviour
 
         Timer.instance.GetCurrentTime += 3f;
 
-        Destroy(gameObject);
+        Destroy(gameObject, 3f);
     }
 }

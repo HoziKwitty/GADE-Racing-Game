@@ -27,9 +27,7 @@ namespace ADTLinkedList
             private set => size = value;
         }
 
-        public LinkedList()
-        {
-        }
+        public LinkedList() { }
 
         public LinkedList(Node<X> head)
         {
@@ -54,10 +52,6 @@ namespace ADTLinkedList
             Size += 1;
         }
 
-        /// <summary>
-        /// O(1) Queue - Enqueue
-        /// </summary>
-        /// <param name="data"></param>
         public void AddToTail(X data)
         {
             if (size == 0)
@@ -74,18 +68,7 @@ namespace ADTLinkedList
             }
         }
 
-        /// <summary>
-        /// O(1) Stack - Pop
-        /// O(1) Queue -> Dequeue
-        /// </summary>
-        public void DeleteAtHead()
-        {
-        }
-
-        public void DeleteAtTail()
-        {
-        }
-
+        // DEBUGGING
         public void Display()
         {
             if (Size == 0) Print("Empty");

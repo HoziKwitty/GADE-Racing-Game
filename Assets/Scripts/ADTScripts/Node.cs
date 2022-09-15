@@ -2,10 +2,8 @@ namespace Node
 {
     public class Node<T>
     {
-
         private T data;
         private Node<T> nextNode;
-        private Node<T> previousNode;
 
         public T Data
         {
@@ -19,33 +17,11 @@ namespace Node
             set => nextNode = value;
         }
 
-        public Node<T> PreviousNode
-        {
-            get => previousNode;
-            set => previousNode = value;
-        }
-
-        public Node()
-        {
-        }
-
         public Node(T data)
         {
             this.data = data;
         }
 
-        public Node(T data, Node<T> nextNode)
-        {
-            this.data = data;
-            this.nextNode = nextNode;
-        }
-
-        public Node(T data, Node<T> nextNode, Node<T> previousNode)
-        {
-            this.data = data;
-            this.nextNode = nextNode;
-            this.previousNode = previousNode;
-        }
         public override string ToString()
         {
             return $"{data.ToString()}";

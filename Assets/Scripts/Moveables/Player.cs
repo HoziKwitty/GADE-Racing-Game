@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float forwardSpeed = 30f;
+    public float forwardSpeed = 40f;
     public float rightSpeed = 5f;
-    public float idleSpeed = 20f;
+    public float idleSpeed = 30f;
 
     public float forwardMove;
     public float rightMove;
 
     public Vector3 moveDelta;
 
-    public float turnDegree = 0.1f;
+    public float turnDegree = 0.2f;
 
     private Rigidbody rb;
 

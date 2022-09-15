@@ -22,14 +22,5 @@ namespace ADTQueue
             return linkedList.Head.Data;
         }
 
-        public X Dequeue()
-        {
-            Node<X> node;
-            linkedList.DeleteAtHead();
-            node = linkedList.Head;
-
-            return node.Data;
-        }
-
     }
 }

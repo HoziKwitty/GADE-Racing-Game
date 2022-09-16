@@ -42,11 +42,7 @@ public class CheckpointManager : MonoBehaviour
 
     public void NextCheckpoint(GameObject checkpoint)
     {
-        if (checkpointsStack.Peek() == null)
-        {
-            return;
-        }
-        else if (checkpointsStack.Peek() == checkpoint)
+        if (checkpointsStack.Peek() == checkpoint)
         {
             checkpointsStack.Pop();
 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float forwardSpeed = 100f;
+    public float forwardSpeed = 70f;
     public float rightSpeed = 5f;
-    public float idleSpeed = 70f;
+    public float idleSpeed = 30f;
 
     public float forwardMove;
     public float rightMove;

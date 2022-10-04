@@ -14,6 +14,13 @@ public class CheckpointManager : MonoBehaviour
 
     public Text results;
 
+    private int count = 0;
+    public int GetCount 
+    { 
+        get { return count; } 
+        set { count = value; } 
+    }
+
     [SerializeField]
     List<GameObject> checkpoints;
 
@@ -24,7 +31,7 @@ public class CheckpointManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
+    void Start()
     {
         checkpointsStack = new Stack<GameObject>(checkpoints);
 

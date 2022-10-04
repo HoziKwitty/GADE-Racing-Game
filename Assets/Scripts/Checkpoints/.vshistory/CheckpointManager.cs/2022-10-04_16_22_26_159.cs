@@ -24,7 +24,7 @@ public class CheckpointManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
+    void Start()
     {
         checkpointsStack = new Stack<GameObject>(checkpoints);
 

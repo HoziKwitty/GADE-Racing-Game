@@ -71,38 +71,6 @@ namespace ADTLinkedList
                 Tail.NextNode = newNode;
                 Tail = newNode;
             }
-
-            Size += 1;
-        }
-
-        public X Search(X search)
-        {
-            X returnNode = default(X);
-
-            Node<X> currentNode = Head;
-
-            while (currentNode != null)
-            {
-                if (currentNode.Data.Equals(search))
-                {
-                    if (currentNode.NextNode == null)
-                    {
-                        returnNode = Head.Data;
-                        break;
-                    }
-                    else
-                    {
-                        returnNode = currentNode.NextNode.Data;
-                        break;
-                    }
-                }
-                else
-                {
-                    currentNode = currentNode.NextNode;
-                }
-            }
-
-            return returnNode;
         }
 
         // DEBUGGING

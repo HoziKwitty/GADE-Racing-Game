@@ -27,7 +27,7 @@ public class AICheckpointManager : MonoBehaviour
 
         AICheckpoints.AddToHead(checkpointHolder.transform.GetChild(0).gameObject);
 
-        for (int i = 1; i < count; i++)
+        for (int i = 1; i < count - 1; i++)
         {
             AICheckpoints.AddToTail(checkpointHolder.transform.GetChild(i).gameObject);
         }
@@ -35,8 +35,8 @@ public class AICheckpointManager : MonoBehaviour
         results.text = "";
     }
     
-    public GameObject NextAICheckpoint(GameObject current)
+    public GameObject NextAICheckpoint(GameObject current, int index)
     {
-        return AICheckpoints.Search(current);
+        return AICheckpoints.Search(index);
     }
 }

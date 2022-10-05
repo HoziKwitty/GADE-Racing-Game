@@ -14,7 +14,6 @@ public class AICheckpointManager : MonoBehaviour
     ADTLinkedList.LinkedList<GameObject> AICheckpoints;
 
     public GameObject checkpointHolder;
-    public int count = 17;
 
     private void Awake()
     {
@@ -25,18 +24,13 @@ public class AICheckpointManager : MonoBehaviour
     {
         AICheckpoints = new ADTLinkedList.LinkedList<GameObject>();
 
-        AICheckpoints.AddToHead(checkpointHolder.transform.GetChild(0).gameObject);
-
-        for (int i = 1; i < count; i++)
-        {
-            AICheckpoints.AddToTail(checkpointHolder.transform.GetChild(i).gameObject);
-        }
+        AICheckpoints
 
         results.text = "";
     }
     
-    public GameObject NextAICheckpoint(GameObject current)
+    public void NextAICheckpoint(GameObject AICheckpoint)
     {
-        return AICheckpoints.Search(current);
+        
     }
 }

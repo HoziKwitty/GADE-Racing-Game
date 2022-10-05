@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 554985928770397172}
   m_Layer: 0
   m_Name: AI Racer
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdfdecc39e72e74eb3ad84d03378e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: {fileID: 0}
+  currentCheckpoint: {fileID: 0}
 --- !u!1001 &5332661085313922395
 PrefabInstance:
   m_ObjectHideFlags: 0

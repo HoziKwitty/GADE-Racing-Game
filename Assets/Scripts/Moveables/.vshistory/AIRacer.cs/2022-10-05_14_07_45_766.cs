@@ -25,19 +25,12 @@ public class AIRacer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("AICheckpoint") && !entered)
         {
-            StartCoroutine(WaitToEnter());
-
             entered = true;
+
+            Debug.Log("entered");
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
             nma.destination = currentCheckpoint.transform.position;
         }
-    }
-
-    private IEnumerator WaitToEnter()
-    {
-        yield return new WaitForSeconds(0.3f);
-
-        entered = false;
     }
 }

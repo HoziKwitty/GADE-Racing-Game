@@ -21,23 +21,27 @@ public class AIRacer : MonoBehaviour
         nma.destination = currentCheckpoint.transform.position;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("AICheckpoint") && !entered)
+        if (other.gameObject.CompareTag("AICheckpoint"))
         {
-            StartCoroutine(WaitToEnter());
-
-            entered = true;
+            Debug.Log("entered");
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
             nma.destination = currentCheckpoint.transform.position;
         }
     }
 
-    private IEnumerator WaitToEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        yield return new WaitForSeconds(0.3f);
+        //if (other.gameObject.CompareTag("AICheckpoint") && !entered)
+        //{
+        //    entered = true;
 
-        entered = false;
+        //    Debug.Log("entered");
+
+        //    currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
+        //    nma.destination = currentCheckpoint.transform.position;
+        //}
     }
 }

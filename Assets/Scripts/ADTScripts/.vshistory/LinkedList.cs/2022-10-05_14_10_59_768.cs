@@ -81,7 +81,7 @@ namespace ADTLinkedList
 
             Node<X> currentNode = Head;
 
-            while (currentNode != null)
+            while (currentNode.NextNode != null)
             {
                 if (currentNode.Data.Equals(search))
                 {

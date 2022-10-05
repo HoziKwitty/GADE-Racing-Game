@@ -9,8 +9,6 @@ public class AIRacer : MonoBehaviour
 
     public GameObject currentCheckpoint;
 
-    public bool entered = false;
-
     private void Start()
     {
         nma = GetComponent<NavMeshAgent>();
@@ -21,23 +19,16 @@ public class AIRacer : MonoBehaviour
         nma.destination = currentCheckpoint.transform.position;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("AICheckpoint") && !entered)
-        {
-            StartCoroutine(WaitToEnter());
+        Debug.Log(collision.gameObject.name);
 
-            entered = true;
+        if (collision.gameObject.CompareTag("AICheckpoint"))
+        {
+            Debug.Log("entered");
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
             nma.destination = currentCheckpoint.transform.position;
         }
-    }
-
-    private IEnumerator WaitToEnter()
-    {
-        yield return new WaitForSeconds(0.3f);
-
-        entered = false;
     }
 }

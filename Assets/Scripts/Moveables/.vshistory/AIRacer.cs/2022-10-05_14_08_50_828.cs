@@ -29,6 +29,8 @@ public class AIRacer : MonoBehaviour
 
             entered = true;
 
+            Debug.Log("entered");
+
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
             nma.destination = currentCheckpoint.transform.position;
         }

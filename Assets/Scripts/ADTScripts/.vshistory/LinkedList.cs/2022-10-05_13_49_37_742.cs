@@ -75,26 +75,25 @@ namespace ADTLinkedList
             Size += 1;
         }
 
-        public X Search(X search)
+        public X Search(X data)
         {
-            X returnNode = default(X);
+            Node<X> returnNode = null;
 
             Node<X> currentNode = Head;
-
             while (currentNode != null)
             {
-                if (currentNode.Data.Equals(search))
+                Debug.Log(currentNode.Data);
+
+                if (currentNode.Data.Equals(data))
                 {
-                    if (currentNode.NextNode == null)
-                    {
-                        returnNode = Head.Data;
-                        break;
-                    }
-                    else
-                    {
-                        returnNode = currentNode.NextNode.Data;
-                        break;
-                    }
+                    //if (currentNode.NextNode == null)
+                    //{
+                    //    returnNode = Head;
+                    //}
+                    //else
+                    //{
+                    //    returnNode = currentNode.NextNode;
+                    //}
                 }
                 else
                 {
@@ -102,7 +101,7 @@ namespace ADTLinkedList
                 }
             }
 
-            return returnNode;
+            return returnNode.Data;
         }
 
         // DEBUGGING

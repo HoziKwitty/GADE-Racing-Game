@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Movement
-    public float forwardSpeed = 1000f;
-    public float brakeSpeed = 3000f;
-    public float steerSpeed = 30f;
+    public float forwardSpeed = 4000f;
+    public float brakeSpeed = 6000f;
+    public float steerSpeed = 240f;
     //public float rightSpeed = 5f;
 
     public float forwardInput;
@@ -89,12 +89,6 @@ public class Player : MonoBehaviour
         frontLeftCol.motorTorque = forwardInput * forwardSpeed;
         frontRightCol.motorTorque = forwardInput * forwardSpeed;
 
-        // Apply brake force
-        frontLeftCol.brakeTorque = brakeSpeed;
-        frontRightCol.brakeTorque = brakeSpeed;
-        backLeftCol.brakeTorque = brakeSpeed;
-        backRightCol.brakeTorque = brakeSpeed;
-
         // Apply steering (only to front wheels)
         steerSpeed *= sidewaysInput;
         frontLeftCol.steerAngle = steerSpeed;
@@ -112,6 +106,14 @@ public class Player : MonoBehaviour
         //            transform.right * rightMove * Time.fixedDeltaTime;
 
         //rb.MovePosition(rb.position + moveDelta);
+    }
+
+    private void Brake()
+    {
+        frontLeftCol.brakeTorque = brakeSpeed;
+        frontRightCol.brakeTorque = brakeSpeed;
+        backLeftCol.brakeTorque = brakeSpeed;
+        backRightCol.brakeTorque = brakeSpeed;
     }
 
     private void UpdateWheelRotation(WheelCollider col, Transform trans)

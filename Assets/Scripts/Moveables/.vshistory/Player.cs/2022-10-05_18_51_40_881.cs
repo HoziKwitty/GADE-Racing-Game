@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Movement
-    public float forwardSpeed = 1000f;
-    public float brakeSpeed = 3000f;
-    public float steerSpeed = 30f;
+    public float forwardSpeed = 90f;
+    public float brakeSpeed = 0f;
+    public float steerSpeed = 120f;
     //public float rightSpeed = 5f;
 
     public float forwardInput;
@@ -25,15 +25,10 @@ public class Player : MonoBehaviour
     // References
     private Rigidbody rb;
 
-    public WheelCollider frontLeftCol;
-    public WheelCollider frontRightCol;
-    public WheelCollider backLeftCol;
-    public WheelCollider backRightCol;
-
-    public Transform frontLeft;
-    public Transform frontRight;
-    public Transform backLeft;
-    public Transform backRight;
+    public WheelCollider frontLeft;
+    public WheelCollider frontRight;
+    public WheelCollider backLeft;
+    public WheelCollider backRight;
 
     void Start()
     {
@@ -42,6 +37,20 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        // Get forwards/backwards and sideways inputs
+        forwardInput = Input.GetAxis("Vertical");
+        sidewaysInput = Input.GetAxis("Horizontal");
+
+        // Check if braking
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            brakeSpeed = 20f;
+        }
+        else
+        {
+            brakeSpeed = 0f;
+        }
+
         //if (transform.position.y <= 0)
         //{
         //    AICheckpointManager.instance.results.text = "Out of bounds!";
@@ -71,42 +80,22 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Get forwards/backwards and sideways inputs
-        forwardInput = Input.GetAxis("Vertical");
-        sidewaysInput = Input.GetAxis("Horizontal");
-
-        // Check if braking
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            brakeSpeed = 1400f;
-        }
-        else
-        {
-            brakeSpeed = 0f;
-        }
-
         // Apply engine force (only to front wheels)
-        frontLeftCol.motorTorque = forwardInput * forwardSpeed;
-        frontRightCol.motorTorque = forwardInput * forwardSpeed;
+        frontLeft.motorTorque = forwardInput * forwardSpeed;
+        frontRight.motorTorque = forwardInput * forwardSpeed;
 
         // Apply brake force
-        frontLeftCol.brakeTorque = brakeSpeed;
-        frontRightCol.brakeTorque = brakeSpeed;
-        backLeftCol.brakeTorque = brakeSpeed;
-        backRightCol.brakeTorque = brakeSpeed;
+        frontLeft.brakeTorque = brakeSpeed;
+        frontRight.brakeTorque = brakeSpeed;
+        backLeft.brakeTorque = brakeSpeed;
+        backRight.brakeTorque = brakeSpeed;
 
         // Apply steering (only to front wheels)
         steerSpeed *= sidewaysInput;
-        frontLeftCol.steerAngle = steerSpeed;
-        frontRightCol.steerAngle = steerSpeed;
+        frontLeft.steerAngle = steerSpeed;
+        frontRight.steerAngle = steerSpeed;
 
-        // Update each wheel's direction
-        //UpdateWheelRotation(frontLeftCol, frontLeft);
-        //UpdateWheelRotation(frontRightCol, frontRight);
-        //UpdateWheelRotation(backLeftCol, backLeft);
-        //UpdateWheelRotation(backRightCol, backRight);
-
-
+        UpdateWheelRotation();
 
         //moveDelta = transform.forward * forwardMove * Time.fixedDeltaTime + 
         //            transform.right * rightMove * Time.fixedDeltaTime;
@@ -114,13 +103,8 @@ public class Player : MonoBehaviour
         //rb.MovePosition(rb.position + moveDelta);
     }
 
-    private void UpdateWheelRotation(WheelCollider col, Transform trans)
+    private void UpdateWheelRotation(WheelCollider collider, Transform transform)
     {
-        Vector3 inPosition;
-        Quaternion inRotation;
 
-        col.GetWorldPose(out inPosition, out inRotation);
-        trans.rotation = inRotation;
-        trans.position = inPosition;
     }
 }

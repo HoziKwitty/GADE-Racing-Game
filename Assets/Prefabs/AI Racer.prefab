@@ -60,12 +60,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 5332661085511477144}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 90
-  m_Acceleration: 70
+  m_Acceleration: 120
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 240
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCheckpoint: {fileID: 0}
+  entered: 0
 --- !u!1001 &5332661085313922395
 PrefabInstance:
   m_ObjectHideFlags: 0

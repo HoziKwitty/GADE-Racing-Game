@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Movement
-    public float forwardSpeed = 1000f;
-    public float brakeSpeed = 3000f;
-    public float steerSpeed = 30f;
+    public float forwardSpeed = 4000f;
+    public float brakeSpeed = 6000f;
+    public float steerSpeed = 240f;
     //public float rightSpeed = 5f;
 
     public float forwardInput;

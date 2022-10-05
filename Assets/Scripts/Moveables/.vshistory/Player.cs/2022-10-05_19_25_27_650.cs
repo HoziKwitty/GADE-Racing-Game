@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Movement
-    public float forwardSpeed = 1000f;
-    public float brakeSpeed = 3000f;
-    public float steerSpeed = 30f;
+    public float forwardSpeed = 4000f;
+    public float brakeSpeed = 0f;
+    public float steerSpeed = 240f;
     //public float rightSpeed = 5f;
 
     public float forwardInput;
@@ -42,6 +42,20 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        // Get forwards/backwards and sideways inputs
+        forwardInput = Input.GetAxis("Vertical");
+        sidewaysInput = Input.GetAxis("Horizontal");
+
+        // Check if braking
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    brakeSpeed = 1400f;
+        //}
+        //else
+        //{
+        //    brakeSpeed = 0f;
+        //}
+
         //if (transform.position.y <= 0)
         //{
         //    AICheckpointManager.instance.results.text = "Out of bounds!";
@@ -71,20 +85,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Get forwards/backwards and sideways inputs
-        forwardInput = Input.GetAxis("Vertical");
-        sidewaysInput = Input.GetAxis("Horizontal");
-
-        // Check if braking
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            brakeSpeed = 1400f;
-        }
-        else
-        {
-            brakeSpeed = 0f;
-        }
-
         // Apply engine force (only to front wheels)
         frontLeftCol.motorTorque = forwardInput * forwardSpeed;
         frontRightCol.motorTorque = forwardInput * forwardSpeed;
@@ -105,8 +105,6 @@ public class Player : MonoBehaviour
         //UpdateWheelRotation(frontRightCol, frontRight);
         //UpdateWheelRotation(backLeftCol, backLeft);
         //UpdateWheelRotation(backRightCol, backRight);
-
-
 
         //moveDelta = transform.forward * forwardMove * Time.fixedDeltaTime + 
         //            transform.right * rightMove * Time.fixedDeltaTime;

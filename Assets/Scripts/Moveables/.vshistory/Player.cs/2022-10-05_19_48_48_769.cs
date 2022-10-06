@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
+    private Rigidbody rb;
 
     private void Start()
     {
-        
-    }
-
-    private void FixedUpdate()
-    {
-        
+        rb = gameObject.transform.GetChild(0).transform.GetComponent<Rigidbody>();
     }
 }

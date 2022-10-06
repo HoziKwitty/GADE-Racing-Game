@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AIRacer : MonoBehaviour
+public class AIRacerFactory : GenericFactory <null>
 {
     // Start is called before the first frame update
     void Start()

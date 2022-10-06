@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(gravityForce, ForceMode.Impulse);
+        rb.AddForce(0f, -1f, 0f, ForceMode.Impulse);
         rb.AddForce(transform.forward * vertMove, ForceMode.Acceleration);
     }
 }

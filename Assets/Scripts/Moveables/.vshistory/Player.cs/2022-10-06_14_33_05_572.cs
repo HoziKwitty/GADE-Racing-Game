@@ -11,13 +11,12 @@ public class Player : MonoBehaviour
     public float vertMove;
     public float horizMove;
 
-    public Vector3 gravityForce = new Vector3(0f, -1f, 0f);
-
     private Rigidbody rb;
 
     private void Start()
     {
-        rb = transform.GetChild(0).transform.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        //rb = transform.GetChild(0).transform.GetComponent<Rigidbody>();
 
         rb.transform.parent = null;
     }
@@ -43,7 +42,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(gravityForce, ForceMode.Impulse);
         rb.AddForce(transform.forward * vertMove, ForceMode.Acceleration);
     }
 }

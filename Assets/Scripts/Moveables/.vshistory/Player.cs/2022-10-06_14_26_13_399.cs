@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float driveSpeed = 400f;
+    public float driveSpeed = 200f;
     public float brakeSpeed = 50f;
-    public float turnSpeed = 100f;
+    public float turnSpeed = 30f;
 
     public float vertMove;
     public float horizMove;
-
-    public Vector3 gravityForce = new Vector3(0f, -1f, 0f);
 
     private Rigidbody rb;
 
@@ -38,12 +36,11 @@ public class Player : MonoBehaviour
 
         transform.position = rb.transform.position;
 
-        transform.Rotate(0f, horizMove * turnSpeed * Time.deltaTime, 0f, Space.World);
+        transform.Rotate(0f, 0, 0f, Space.World);
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(gravityForce, ForceMode.Impulse);
         rb.AddForce(transform.forward * vertMove, ForceMode.Acceleration);
     }
 }

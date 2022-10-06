@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float driveSpeed = 400f;
-    public float brakeSpeed = 50f;
-    public float turnSpeed = 100f;
+    public float driveSpeed = 200f;
+    public float brakeSpeed = 400f;
 
     public float vertMove;
     public float horizMove;
-
-    public Vector3 gravityForce = new Vector3(0f, -1f, 0f);
 
     private Rigidbody rb;
 
@@ -24,26 +21,23 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        vertMove = Input.GetAxis("Vertical");
-        horizMove = Input.GetAxis("Horizontal");
+        vertMove = driveSpeed * Input.GetAxis("Vertical");
+        //horizMove = horizSpeed * Input.GetAxis("Horizontal");
 
         if (vertMove > 0)
         {
-            vertMove *= driveSpeed;
+            vertMove = driveSpeed;
         }
         else
         {
-            vertMove *= brakeSpeed;
+            vertMove = brakeSpeed;
         }
-
-        transform.position = rb.transform.position;
-
-        transform.Rotate(0f, horizMove * turnSpeed * Time.deltaTime, 0f, Space.World);
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(gravityForce, ForceMode.Impulse);
+        transform.position = rb.transform.position;
+
         rb.AddForce(transform.forward * vertMove, ForceMode.Acceleration);
     }
 }

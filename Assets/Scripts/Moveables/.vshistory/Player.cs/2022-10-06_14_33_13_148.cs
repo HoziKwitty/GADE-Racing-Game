@@ -11,15 +11,14 @@ public class Player : MonoBehaviour
     public float vertMove;
     public float horizMove;
 
-    public Vector3 gravityForce = new Vector3(0f, -1f, 0f);
-
     private Rigidbody rb;
 
     private void Start()
     {
-        rb = transform.GetChild(0).transform.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        //rb = transform.GetChild(0).transform.GetComponent<Rigidbody>();
 
-        rb.transform.parent = null;
+        //rb.transform.parent = null;
     }
 
     private void Update()
@@ -36,14 +35,13 @@ public class Player : MonoBehaviour
             vertMove *= brakeSpeed;
         }
 
-        transform.position = rb.transform.position;
+        //transform.position = rb.transform.position;
 
         transform.Rotate(0f, horizMove * turnSpeed * Time.deltaTime, 0f, Space.World);
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(gravityForce, ForceMode.Impulse);
         rb.AddForce(transform.forward * vertMove, ForceMode.Acceleration);
     }
 }

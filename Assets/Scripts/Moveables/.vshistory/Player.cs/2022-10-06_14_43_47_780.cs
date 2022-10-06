@@ -11,8 +11,6 @@ public class Player : MonoBehaviour
     public float vertMove;
     public float horizMove;
 
-    public Vector3 gravityForce = new Vector3(0f, -1f, 0f);
-
     private Rigidbody rb;
 
     private void Start()
@@ -43,7 +41,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(gravityForce, ForceMode.Impulse);
+        rb.AddForce(0f, -9.8f, 0f, ForceMode.Impulse);
         rb.AddForce(transform.forward * vertMove, ForceMode.Acceleration);
     }
 }

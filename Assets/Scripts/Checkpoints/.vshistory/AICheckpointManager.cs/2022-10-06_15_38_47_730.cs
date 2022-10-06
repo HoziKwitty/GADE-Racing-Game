@@ -35,7 +35,7 @@ public class AICheckpointManager : MonoBehaviour
 
         resultsImage.gameObject.SetActive(false);
         resultsText = resultsImage.transform.GetChild(0).gameObject.GetComponent<Text>();
-        resultsText.text = "";
+        resultsText = "";
     }
     
     public GameObject NextAICheckpoint(GameObject current)

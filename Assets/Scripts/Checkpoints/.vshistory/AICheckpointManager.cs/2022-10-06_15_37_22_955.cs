@@ -9,7 +9,7 @@ public class AICheckpointManager : MonoBehaviour
     public static AICheckpointManager instance;
 
     public Image resultsImage;
-    private Text resultsText;
+    public Text resultsText;
 
     [SerializeField]
     ADTLinkedList.LinkedList<GameObject> AICheckpoints;
@@ -34,7 +34,6 @@ public class AICheckpointManager : MonoBehaviour
         }
 
         resultsImage.gameObject.SetActive(false);
-        resultsText = resultsImage.transform.GetChild(0).gameObject.GetComponent<Text>();
         resultsText.text = "";
     }
     

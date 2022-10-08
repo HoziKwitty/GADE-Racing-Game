@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
 
     public int position;
     public GameObject currentCheckpoint;
-    public bool entered = false;
 
     private Rigidbody rb;
 
@@ -60,8 +59,7 @@ public class Player : MonoBehaviour
             entered = true;
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
-
-            AICheckpointManager.instance.GetCurrentPositions();
+            nma.destination = currentCheckpoint.transform.position;
         }
     }
 

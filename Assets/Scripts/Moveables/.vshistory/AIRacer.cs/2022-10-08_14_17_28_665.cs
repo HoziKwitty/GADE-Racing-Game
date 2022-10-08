@@ -33,8 +33,6 @@ public class AIRacer : MonoBehaviour
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
             nma.destination = currentCheckpoint.transform.position;
-
-            AICheckpointManager.instance.GetCurrentPositions();
         }
     }
 

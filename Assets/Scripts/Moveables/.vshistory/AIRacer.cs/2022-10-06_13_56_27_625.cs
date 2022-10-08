@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class AIRacer : MonoBehaviour
 {
-    public int position;
-
     private NavMeshAgent nma;
 
     public GameObject currentCheckpoint;
@@ -33,8 +31,6 @@ public class AIRacer : MonoBehaviour
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
             nma.destination = currentCheckpoint.transform.position;
-
-            AICheckpointManager.instance.GetCurrentPositions();
         }
     }
 

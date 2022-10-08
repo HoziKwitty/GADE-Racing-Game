@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5332661085511477146}
   - component: {fileID: 5465738462711661644}
   - component: {fileID: 554985928770397172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AI Racer
   m_TagString: AI
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5332661085511477144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 73.5, y: 55.66, z: 81.97}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5587791199664738992}
@@ -49,7 +49,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!195 &5465738462711661644
 NavMeshAgent:
@@ -104,7 +104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.208
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -138,9 +138,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4101048397007907020, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2065880871736655573, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1588621848626746934, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
       propertyPath: m_Name
-      value: AI Racer
+      value: Meshes
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754869783802881469, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181669327626173419, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3defb524c49cf42b1b6ef4cfe4fd72, type: 3}
@@ -159,8 +183,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.004474532
-  m_Height: 0.008949064
+  m_Radius: 0.00435
+  m_Height: 0.005
   m_Direction: 1
   m_Center: {x: 0.0097709615, y: 0.01004892, z: 0.007000127}
 --- !u!1 &943307545308029551 stripped
@@ -178,8 +202,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.004538017
-  m_Height: 0.009076033
+  m_Radius: 0.00435
+  m_Height: 0.005
   m_Direction: 1
   m_Center: {x: 0.009771367, y: 0.009289313, z: 0.0070001264}
 --- !u!1 &2591117728853187729 stripped
@@ -197,8 +221,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.004538017
-  m_Height: 0.009076033
+  m_Radius: 0.00435
+  m_Height: 0.005
   m_Direction: 1
   m_Center: {x: -0.009771367, y: 0.009289313, z: 0.0070001264}
 --- !u!1 &2978549829857424496 stripped
@@ -216,8 +240,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.004474532
-  m_Height: 0.008949064
+  m_Radius: 0.00435
+  m_Height: 0.005
   m_Direction: 1
   m_Center: {x: -0.0097709615, y: 0.01004892, z: 0.007000127}
 --- !u!1 &3849096208667545264 stripped

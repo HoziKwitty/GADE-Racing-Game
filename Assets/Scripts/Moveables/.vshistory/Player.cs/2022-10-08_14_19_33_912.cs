@@ -60,8 +60,6 @@ public class Player : MonoBehaviour
             entered = true;
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
-
-            AICheckpointManager.instance.GetCurrentPositions();
         }
     }
 

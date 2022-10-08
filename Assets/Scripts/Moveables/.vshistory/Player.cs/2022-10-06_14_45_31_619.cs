@@ -13,10 +13,6 @@ public class Player : MonoBehaviour
 
     public Vector3 gravityForce = new Vector3(0f, -1f, 0f);
 
-    public int position;
-    public GameObject currentCheckpoint;
-    public bool entered = false;
-
     private Rigidbody rb;
 
     private void Start()
@@ -49,26 +45,5 @@ public class Player : MonoBehaviour
     {
         rb.AddForce(gravityForce, ForceMode.Impulse);
         rb.AddForce(transform.forward * vertMove, ForceMode.Acceleration);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("AICheckpoint") && !entered)
-        {
-            StartCoroutine(WaitToEnter());
-
-            entered = true;
-
-            currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
-
-            AICheckpointManager.instance.GetCurrentPositions();
-        }
-    }
-
-    private IEnumerator WaitToEnter()
-    {
-        yield return new WaitForSeconds(0.3f);
-
-        entered = false;
     }
 }

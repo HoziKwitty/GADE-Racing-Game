@@ -13,9 +13,14 @@ public class Player : Racer
 
     public Vector3 gravityForce = new Vector3(0f, -1f, 0f);
 
+    //public int position;
+    //public GameObject currentCheckpoint;
+    //public bool entered = false;
+    //public int currentInt;
+
     private Rigidbody rb;
 
-    public override void Start()
+    private void Start()
     {
         rb = transform.GetChild(0).transform.GetComponent<Rigidbody>();
 
@@ -45,5 +50,28 @@ public class Player : Racer
     {
         rb.AddForce(gravityForce, ForceMode.Impulse);
         rb.AddForce(transform.forward * vertMove, ForceMode.Acceleration);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("AICheckpoint") && !entered)
+        {
+            StartCoroutine(WaitToEnter());
+
+            entered = true;
+
+            currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
+
+            currentInt = int.Parse(currentCheckpoint.name) - 1;
+
+            AICheckpointManager.instance.GetCurrentPositions();
+        }
+    }
+
+    private IEnumerator WaitToEnter()
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        entered = false;
     }
 }

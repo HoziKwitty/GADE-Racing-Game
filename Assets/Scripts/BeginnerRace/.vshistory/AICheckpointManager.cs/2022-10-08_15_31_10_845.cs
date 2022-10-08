@@ -22,7 +22,7 @@ public class AICheckpointManager : MonoBehaviour
     // Fields for holding racers
     ADTLinkedList.LinkedList<GameObject> racers;
     public GameObject racerHolder;
-    public int rcCount = 3;
+    public int rcCount = 2;
 
     // Position tracker
     [SerializeField]
@@ -85,13 +85,6 @@ public class AICheckpointManager : MonoBehaviour
                     racerPositions[j + 1] = temp;
                 }
             }
-        }
-
-        for (int i = 1; i <= rcCount; i++)
-        {
-            racerPositions[i - 1].GetComponent<Racer>().currentInt = i;
-
-            //Debug.Log(racerPositions[i - 1].GetComponent<Racer>().currentInt);
         }
     }
 

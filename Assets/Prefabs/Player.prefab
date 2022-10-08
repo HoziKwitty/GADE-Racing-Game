@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1968491204}
   m_Layer: 6
   m_Name: FollowObj
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,9 +124,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7314163709293208018}
   - component: {fileID: 2659631770951662457}
+  - component: {fileID: 274990109}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,12 +162,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d8f34095c060f49885fef78939e14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 0
+  currentCheckpoint: {fileID: 0}
+  currentInt: 0
+  entered: 0
   driveSpeed: 400
   brakeSpeed: 50
   turnSpeed: 100
   vertMove: 0
   horizMove: 0
   gravityForce: {x: 0, y: -1, z: 0}
+--- !u!114 &274990109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314163709293208021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12b9f748062e494998e556e09df65d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: 0
+  currentCheckpoint: {fileID: 0}
+  currentInt: 0
+  entered: 0
 --- !u!1 &7314163709745936110
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,13 +327,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -4101048397007907020, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
+      propertyPath: m_TagString
+      value: Hero
+      objectReference: {fileID: 0}
     - target: {fileID: -2065880871736655573, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -2065880871736655573, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
+      propertyPath: m_TagString
+      value: Hero
+      objectReference: {fileID: 0}
     - target: {fileID: -1588621848626746934, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1588621848626746934, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
+      propertyPath: m_TagString
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
       propertyPath: m_Name
@@ -322,13 +355,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
+      propertyPath: m_TagString
+      value: Hero
+      objectReference: {fileID: 0}
     - target: {fileID: 5754869783802881469, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5754869783802881469, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
+      propertyPath: m_TagString
+      value: Hero
+      objectReference: {fileID: 0}
     - target: {fileID: 9181669327626173419, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9181669327626173419, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}
+      propertyPath: m_TagString
+      value: Hero
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45e294a07044b9847ad2d48359c5b9f9, type: 3}

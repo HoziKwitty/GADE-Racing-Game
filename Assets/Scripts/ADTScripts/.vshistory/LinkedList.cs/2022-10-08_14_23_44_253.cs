@@ -85,54 +85,6 @@ namespace ADTLinkedList
             {
                 if (currentNode.Data.Equals(search))
                 {
-                    returnNode = currentNode.Data;
-                    break;
-                }
-                else
-                {
-                    currentNode = currentNode.NextNode;
-                }
-            }
-
-            return returnNode;
-        }
-
-        public X SearchForIndex(int index)
-        {
-            X returnNode = default(X);
-
-            Node<X> currentNode = Head;
-
-            int inIndex = 0;
-
-            while (currentNode != null)
-            {
-                if (index == inIndex)
-                {
-                    returnNode = currentNode.Data;
-                    break;
-                }
-                else
-                {
-                    currentNode = currentNode.NextNode;
-                }
-
-                inIndex++;
-            }
-
-            return returnNode;
-        }
-
-        public X SearchForNext(X search)
-        {
-            X returnNode = default(X);
-
-            Node<X> currentNode = Head;
-
-            while (currentNode != null)
-            {
-                if (currentNode.Data.Equals(search))
-                {
                     if (currentNode.NextNode == null)
                     {
                         returnNode = Head.Data;

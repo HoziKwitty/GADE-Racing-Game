@@ -86,7 +86,6 @@ namespace ADTLinkedList
                 if (currentNode.Data.Equals(search))
                 {
                     returnNode = currentNode.Data;
-                    break;
                 }
                 else
                 {
@@ -110,7 +109,6 @@ namespace ADTLinkedList
                 if (index == inIndex)
                 {
                     returnNode = currentNode.Data;
-                    break;
                 }
                 else
                 {

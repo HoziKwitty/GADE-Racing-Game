@@ -110,7 +110,6 @@ namespace ADTLinkedList
                 if (index == inIndex)
                 {
                     returnNode = currentNode.Data;
-                    break;
                 }
                 else
                 {

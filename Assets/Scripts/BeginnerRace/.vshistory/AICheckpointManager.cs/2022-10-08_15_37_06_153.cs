@@ -91,7 +91,7 @@ public class AICheckpointManager : MonoBehaviour
         {
             racerPositions[i - 1].GetComponent<Racer>().currentInt = i;
 
-            //Debug.Log(racerPositions[i - 1].GetComponent<Racer>().currentInt);
+            Debug.Log(racerPositions[i - 1].GetComponent<Racer>().currentInt);
         }
     }
 

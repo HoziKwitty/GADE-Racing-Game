@@ -622,6 +622,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2332494739891694201, guid: 9f44783ce67784d4ebfd69c2c552dbc8, type: 3}
   m_PrefabInstance: {fileID: 240328377}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &274990106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7314163709293208021, guid: 9a6f4b776502f584daf037300a72c6e8, type: 3}
+  m_PrefabInstance: {fileID: 7314163709581660278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &274990108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7314163709293208018, guid: 9a6f4b776502f584daf037300a72c6e8, type: 3}
@@ -1820,6 +1825,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultsImage: {fileID: 594364469}
+  positionImage: {fileID: 1290067620}
+  position: {fileID: 1573185130}
+  positionSprites:
+  - {fileID: 1789524805, guid: b667ab97334a9cf418e342a12aa4ef0b, type: 3}
+  - {fileID: -530615350, guid: b667ab97334a9cf418e342a12aa4ef0b, type: 3}
+  - {fileID: 996610204, guid: b667ab97334a9cf418e342a12aa4ef0b, type: 3}
+  - {fileID: 1182529326, guid: b667ab97334a9cf418e342a12aa4ef0b, type: 3}
+  player: {fileID: 274990106}
   checkpointHolder: {fileID: 120893067}
   ckpCount: 17
   racerHolder: {fileID: 533101830}

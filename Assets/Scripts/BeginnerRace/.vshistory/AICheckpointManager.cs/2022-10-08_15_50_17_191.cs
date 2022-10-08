@@ -15,7 +15,7 @@ public class AICheckpointManager : MonoBehaviour
 
     public Image positionImage;
     public Text position;
-    public List<Sprite> positionSprites;
+    public List[] positionSprites;
 
     // Object references
     public GameObject player;
@@ -73,8 +73,6 @@ public class AICheckpointManager : MonoBehaviour
         resultsImage.gameObject.SetActive(false);
         resultsText = resultsImage.transform.GetChild(0).gameObject.GetComponent<Text>();
         resultsText.text = "";
-
-        position = positionImage.transform.GetChild(0).gameObject.GetComponent<Text>();
     }
 
     public void GetCurrentPositions()
@@ -113,19 +111,16 @@ public class AICheckpointManager : MonoBehaviour
         {
             case 1:
                 append = "ST";
-                positionImage.sprite = positionSprites[0];
+                positionImage = 
                 break;
             case 2:
                 append = "ND";
-                positionImage.sprite = positionSprites[1];
                 break;
             case 3:
                 append = "RD";
-                positionImage.sprite = positionSprites[2];
                 break;
             default:
                 append = "TH";
-                positionImage.sprite = positionSprites[3];
                 break;
         }
 

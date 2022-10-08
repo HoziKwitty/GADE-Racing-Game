@@ -74,7 +74,7 @@ public class AICheckpointManager : MonoBehaviour
         resultsText = resultsImage.transform.GetChild(0).gameObject.GetComponent<Text>();
         resultsText.text = "";
 
-        position = positionImage.transform.GetChild(0).gameObject.GetComponent<Text>();
+        positionSprites = new List<Sprite>();
     }
 
     public void GetCurrentPositions()

@@ -24,7 +24,7 @@ public class AICheckpointManager : MonoBehaviour
     [SerializeField]
     ADTLinkedList.LinkedList<GameObject> AICheckpoints;
     public GameObject checkpointHolder;
-    public int ckpCount = 17;
+    public int ckpCount = 22;
 
     // Fields for holding racers
     ADTLinkedList.LinkedList<GameObject> racers;

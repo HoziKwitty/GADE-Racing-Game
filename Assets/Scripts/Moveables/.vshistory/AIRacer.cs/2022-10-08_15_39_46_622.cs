@@ -9,7 +9,10 @@ public class AIRacer : Racer
     public override void Start()
     {
         base.Start();
+    }
 
+    private void Update()
+    {
         nma.destination = currentCheckpoint.transform.position;
     }
 }

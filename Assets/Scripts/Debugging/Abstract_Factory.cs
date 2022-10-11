@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class GenericFactory<T> : MonoBehaviour where T : MonoBehaviour
+public abstract class GenericFactory<T> : MonoBehaviour where T : MonoBehaviour
 {
-    
+    int num;
+
     [SerializeField]
-    private T prefab;
-    
+    public T[] prefab;
+
     public T GetNewInstance()
     {
-        return Instantiate(prefab);
+        return Instantiate(prefab[num]);
+
     }
 }

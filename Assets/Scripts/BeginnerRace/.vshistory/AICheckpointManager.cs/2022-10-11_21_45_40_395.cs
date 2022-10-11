@@ -24,6 +24,8 @@ public class AICheckpointManager : MonoBehaviour
     [SerializeField]
     ADTLinkedList.LinkedList<GameObject> AICheckpoints;
 
+    //
+    public GameObject[] checkpointArray;
     public GameObject checkpointHolder;
     public int ckpCount = 22;
 

@@ -24,6 +24,10 @@ public class AICheckpointManager : MonoBehaviour
     [SerializeField]
     ADTLinkedList.LinkedList<GameObject> AICheckpoints;
 
+    //
+    public GameObject[] checkpointArray;
+    //
+
     public GameObject checkpointHolder;
     public int ckpCount = 22;
 
@@ -45,6 +49,22 @@ public class AICheckpointManager : MonoBehaviour
     {
         // Gather all checkpoints
         AICheckpoints = new ADTLinkedList.LinkedList<GameObject>();
+
+        //
+        for (int i = 0; i < checkpointArray.Length; i++)
+        {
+            Debug.Log(checkpointArray[i].name);
+
+            if (i == 0)
+            {
+                AICheckpoints.AddToHead(checkpointArray[i]);
+            }
+            else
+            {
+                AICheckpoints.AddToTail(checkpointArray[i]);
+            }
+        }
+        //
 
         AICheckpoints.AddToHead(checkpointHolder.transform.GetChild(0).gameObject);
         for (int i = 1; i < ckpCount; i++)

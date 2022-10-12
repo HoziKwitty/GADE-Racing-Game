@@ -157,8 +157,6 @@ public class AICheckpointManager : MonoBehaviour
 
     public void UpdateLapCounter()
     {
-        Debug.Log(lapCount);
-
         if (lapCount == 3)
         {
             resultsImage.gameObject.SetActive(true);

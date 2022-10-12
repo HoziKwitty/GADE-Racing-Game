@@ -18,7 +18,7 @@ public class AICheckpointManager : MonoBehaviour
     public List<Sprite> positionSprites;
 
     public Text lapText;
-    public int lapCount;
+    public int lapCount = 1;
 
     // Object references
     public GameObject player;
@@ -80,8 +80,7 @@ public class AICheckpointManager : MonoBehaviour
 
         position = positionImage.transform.GetChild(0).gameObject.GetComponent<Text>();
 
-        lapCount = 1;
-        lapText.text = lapCount + " / 3";
+        lapText.text = "1 / 3";
     }
 
     private void Update()
@@ -157,8 +156,6 @@ public class AICheckpointManager : MonoBehaviour
 
     public void UpdateLapCounter()
     {
-        Debug.Log(lapCount);
-
         if (lapCount == 3)
         {
             resultsImage.gameObject.SetActive(true);

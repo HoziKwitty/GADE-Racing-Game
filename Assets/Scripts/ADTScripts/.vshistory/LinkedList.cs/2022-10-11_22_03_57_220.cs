@@ -75,6 +75,28 @@ namespace ADTLinkedList
             Size += 1;
         }
 
+        public X Search(X search)
+        {
+            X returnNode = default(X);
+
+            Node<X> currentNode = Head;
+
+            while (currentNode != null)
+            {
+                if (currentNode.Data.Equals(search))
+                {
+                    returnNode = currentNode.Data;
+                    break;
+                }
+                else
+                {
+                    currentNode = currentNode.NextNode;
+                }
+            }
+
+            return returnNode;
+        }
+
         public X SearchForIndex(int index)
         {
             X returnNode = default(X);

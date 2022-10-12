@@ -7,6 +7,7 @@ TagManager:
   - Hero
   - AICheckpoint
   - AI
+  - LapIterator
   layers:
   - Default
   - TransparentFX

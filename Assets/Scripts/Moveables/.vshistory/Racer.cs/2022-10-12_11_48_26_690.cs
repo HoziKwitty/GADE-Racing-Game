@@ -23,8 +23,8 @@ public class Racer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("AICheckpoint") && !entered)
         {
-            entered = true;
             StartCoroutine(WaitToEnter(0.3f));
+            entered = true;
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
 
@@ -39,8 +39,8 @@ public class Racer : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("LapIterator") && gameObject.CompareTag("Hero") && !entered)
         {
-            entered = true;
             StartCoroutine(WaitToEnter(5f));
+            entered = true;
 
             AICheckpointManager.instance.UpdateLapCounter();
         }

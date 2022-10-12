@@ -157,8 +157,6 @@ public class AICheckpointManager : MonoBehaviour
 
     public void UpdateLapCounter()
     {
-        Debug.Log(lapCount);
-
         if (lapCount == 3)
         {
             resultsImage.gameObject.SetActive(true);
@@ -166,7 +164,7 @@ public class AICheckpointManager : MonoBehaviour
 
             Time.timeScale = 0;
         }
-        else
+        else if (lapCount < 3)
         {
             lapCount++;
             lapText.text = lapCount + " / 3";

@@ -17,9 +17,6 @@ public class AICheckpointManager : MonoBehaviour
     public Text position;
     public List<Sprite> positionSprites;
 
-    public Text lapText;
-    public int lapCount;
-
     // Object references
     public GameObject player;
 
@@ -79,9 +76,6 @@ public class AICheckpointManager : MonoBehaviour
         resultsText.text = "";
 
         position = positionImage.transform.GetChild(0).gameObject.GetComponent<Text>();
-
-        lapCount = 1;
-        lapText.text = lapCount + " / 3";
     }
 
     private void Update()
@@ -90,8 +84,6 @@ public class AICheckpointManager : MonoBehaviour
         {
             resultsImage.gameObject.SetActive(true);
             resultsText.text = "Out of Bounds!";
-
-            Time.timeScale = 0;
         }
     }
 
@@ -153,23 +145,5 @@ public class AICheckpointManager : MonoBehaviour
     public GameObject NextAICheckpoint(GameObject current)
     {
         return AICheckpoints.SearchForNext(current);
-    }
-
-    public void UpdateLapCounter()
-    {
-        Debug.Log(lapCount);
-
-        if (lapCount == 3)
-        {
-            resultsImage.gameObject.SetActive(true);
-            resultsText.text = "Race Finished!";
-
-            Time.timeScale = 0;
-        }
-        else
-        {
-            lapCount++;
-            lapText.text = lapCount + " / 3";
-        }
     }
 }

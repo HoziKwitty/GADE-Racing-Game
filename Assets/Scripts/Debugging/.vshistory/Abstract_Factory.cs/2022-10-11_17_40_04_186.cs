@@ -9,8 +9,7 @@ public abstract class GenericFactory<T> : MonoBehaviour where T : MonoBehaviour
 
     public T GetNewInstance()
     {
-        num++;
+        return Instantiate(prefab[num]);
 
-        return Instantiate(prefab[num - 1]);
     }
 }

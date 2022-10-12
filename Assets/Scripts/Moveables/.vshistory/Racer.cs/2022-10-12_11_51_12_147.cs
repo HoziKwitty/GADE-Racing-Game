@@ -17,8 +17,6 @@ public class Racer : MonoBehaviour
     public virtual void Start()
     {
         nma = GetComponent<NavMeshAgent>();
-
-        currentCheckpoint = GameObject.Find("1");
     }
 
     public void OnTriggerEnter(Collider other)

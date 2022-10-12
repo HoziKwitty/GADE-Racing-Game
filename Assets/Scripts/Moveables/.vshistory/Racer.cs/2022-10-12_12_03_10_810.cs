@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Racer : MonoBehaviour
 {
+    public float speed;
+
     public int position;
 
     protected NavMeshAgent nma;

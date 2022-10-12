@@ -5,10 +5,10 @@ using UnityEngine.AI;
 
 public class AIRacer : Racer
 {
-    public int speed;
+    public float speed;
 
-    public int min = 50;
-    public int max = 80;
+    public float min;
+    public float max;
 
     public override void Start()
     {
@@ -17,6 +17,5 @@ public class AIRacer : Racer
         speed = Random.Range(min, max);
 
         nma.destination = currentCheckpoint.transform.position;
-        nma.speed = speed;
     }
 }

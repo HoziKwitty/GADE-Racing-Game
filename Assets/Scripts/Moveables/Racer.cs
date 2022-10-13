@@ -11,6 +11,7 @@ public class Racer : MonoBehaviour
 
     public GameObject currentCheckpoint;
     public int currentInt;
+    public int currentLap;
 
     public bool entered = false;
 
@@ -19,37 +20,43 @@ public class Racer : MonoBehaviour
         nma = GetComponent<NavMeshAgent>();
 
         currentCheckpoint = GameObject.Find("1");
+        currentLap = 1;
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AICheckpoint") && !entered)
         {
-            entered = true;
             StartCoroutine(WaitToEnter(0.3f));
 
             currentCheckpoint = AICheckpointManager.instance.NextAICheckpoint(currentCheckpoint);
 
+            // Give the AI the new destination
             if (gameObject.CompareTag("AI"))
             {
                 nma.destination = currentCheckpoint.transform.position;
             }
 
-            currentInt = int.Parse(currentCheckpoint.name) - 1;
+            currentInt = int.Parse(other.gameObject.name) - 1;
 
+            // Update the racers' positions
             AICheckpointManager.instance.GetCurrentPositions();
         }
-        else if (other.gameObject.CompareTag("LapIterator") && gameObject.CompareTag("Hero") && !entered)
+        else if(other.gameObject.CompareTag("LapIterator"))
         {
-            entered = true;
-            StartCoroutine(WaitToEnter(5f));
+            currentLap++;
 
-            AICheckpointManager.instance.UpdateLapCounter();
+            if (gameObject.CompareTag("Hero"))
+            {
+                AICheckpointManager.instance.UpdateLapCounter(currentLap);
+            }
         }
     }
 
     private IEnumerator WaitToEnter(float time)
     {
+        entered = true;
+
         yield return new WaitForSeconds(time);
 
         entered = false;

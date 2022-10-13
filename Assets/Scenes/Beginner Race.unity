@@ -8335,11 +8335,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2332494739891694201, guid: 9f44783ce67784d4ebfd69c2c552dbc8, type: 3}
   m_PrefabInstance: {fileID: 961674363}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &961674365 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2332494739891694200, guid: 9f44783ce67784d4ebfd69c2c552dbc8, type: 3}
-  m_PrefabInstance: {fileID: 961674363}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &971007940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12938,7 +12933,6 @@ MonoBehaviour:
   - {fileID: 996610204, guid: b667ab97334a9cf418e342a12aa4ef0b, type: 3}
   - {fileID: 1182529326, guid: b667ab97334a9cf418e342a12aa4ef0b, type: 3}
   lapText: {fileID: 1628755420}
-  lapCount: 1
   player: {fileID: 274990106}
   checkpointHolder: {fileID: 120893067}
   ckpCount: 26
@@ -20790,14 +20784,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 533101831}
     m_Modifications:
-    - target: {fileID: 274990109, guid: 9a6f4b776502f584daf037300a72c6e8, type: 3}
-      propertyPath: currentCheckpoint
-      value: 
-      objectReference: {fileID: 961674365}
-    - target: {fileID: 2659631770951662457, guid: 9a6f4b776502f584daf037300a72c6e8, type: 3}
-      propertyPath: currentCheckpoint
-      value: 
-      objectReference: {fileID: 961674365}
     - target: {fileID: 7314163709293208018, guid: 9a6f4b776502f584daf037300a72c6e8, type: 3}
       propertyPath: m_RootOrder
       value: 0

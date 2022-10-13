@@ -18,7 +18,6 @@ public class AICheckpointManager : MonoBehaviour
     public List<Sprite> positionSprites;
 
     public Text lapText;
-    public int lapCount;
 
     // Object references
     public GameObject player;
@@ -80,8 +79,7 @@ public class AICheckpointManager : MonoBehaviour
 
         position = positionImage.transform.GetChild(0).gameObject.GetComponent<Text>();
 
-        lapCount = 1;
-        lapText.text = lapCount + " / 3";
+        lapText.text = "1 / 3";
     }
 
     private void Update()
@@ -97,23 +95,51 @@ public class AICheckpointManager : MonoBehaviour
 
     public void GetCurrentPositions()
     {
-        GameObject temp;
+        GameObject temp = null;
 
         // Order array
         for (int i = rcCount; i >= 0; i--)
         {
             for (int j = 0; j < rcCount - 1; j++)
             {
+                Racer racer1 = racerPositions[j].GetComponent<Racer>();
+                Racer racer2 = racerPositions[j + 1].GetComponent<Racer>();
+
                 // Check current checkpoint values
-                if (racerPositions[j].GetComponent<Racer>().currentInt < racerPositions[j + 1].GetComponent<Racer>().currentInt)
+                // First: check lap number
+                if (racer1.currentLap < racer2.currentLap)
                 {
                     temp = racerPositions[j];
                     racerPositions[j] = racerPositions[j + 1];
                     racerPositions[j + 1] = temp;
                 }
+                else if (racer1.currentLap == racer2.currentLap)
+                {
+                    // Second: check checkpoint number
+                    if (racer1.currentInt < racer2.currentInt)
+                    {
+                        temp = racerPositions[j];
+                        racerPositions[j] = racerPositions[j + 1];
+                        racerPositions[j + 1] = temp;
+                    }
+                    else if (racer1.currentInt == racer2.currentInt)
+                    {
+                        // Third: check distance to next waypoint
+                        float distance1 = Vector3.Distance(racer1.currentCheckpoint.transform.position, racer1.transform.position);
+                        float distance2 = Vector3.Distance(racer2.currentCheckpoint.transform.position, racer2.transform.position);
+
+                        if (distance1 > distance2)
+                        {
+                            temp = racerPositions[j];
+                            racerPositions[j] = racerPositions[j + 1];
+                            racerPositions[j + 1] = temp;
+                        }
+                    }
+                }
             }
         }
 
+        // Assign positions
         for (int i = 1; i <= rcCount; i++)
         {
             racerPositions[i - 1].GetComponent<Racer>().position = i;
@@ -155,11 +181,9 @@ public class AICheckpointManager : MonoBehaviour
         return AICheckpoints.SearchForNext(current);
     }
 
-    public void UpdateLapCounter()
+    public void UpdateLapCounter(int lapCount)
     {
-        Debug.Log(lapCount);
-
-        if (lapCount == 3)
+        if (lapCount == 4)
         {
             resultsImage.gameObject.SetActive(true);
             resultsText.text = "Race Finished!";
@@ -168,7 +192,6 @@ public class AICheckpointManager : MonoBehaviour
         }
         else
         {
-            lapCount++;
             lapText.text = lapCount + " / 3";
         }
     }

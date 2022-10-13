@@ -77,7 +77,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 1
   m_Speed: 60
-  m_Acceleration: 80
+  m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 240
   m_StoppingDistance: 1
@@ -103,10 +103,9 @@ MonoBehaviour:
   position: 0
   currentCheckpoint: {fileID: 0}
   currentInt: 0
+  currentLap: 0
   entered: 0
   speed: 0
-  min: 50
-  max: 80
 --- !u!114 &7532510539218670080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +121,7 @@ MonoBehaviour:
   position: 0
   currentCheckpoint: {fileID: 0}
   currentInt: 0
+  currentLap: 0
   entered: 0
 --- !u!1 &3222411112267542413
 GameObject:

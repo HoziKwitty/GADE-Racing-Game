@@ -10,8 +10,34 @@ public class AnimationStateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         anim = GetComponent<Animator>();
+        num = Random.Range(1, 4);
+        setanim(num);
+    }
+
+    void setanim(int no)
+    {
+        switch (no)
+        {
+            case 1:
+                anim.SetBool("Ischeering", true);
+                anim.SetBool("Isclapping", false);
+                anim.SetBool("IsExcited", false);
+                print("cheering");
+                break;
+            case 2:
+                anim.SetBool("Ischeering", false);
+                anim.SetBool("Isclapping", true);
+                anim.SetBool("IsExcited", false);
+                print("clapping");
+                break;
+            case 3:
+                anim.SetBool("Ischeering", false);
+                anim.SetBool("Isclapping", false);
+                anim.SetBool("IsExcited", true);
+                print("excited");
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -23,27 +49,28 @@ public class AnimationStateController : MonoBehaviour
         {
             num = Random.Range(1, 4);
             print(num);
-            switch (num)
-            {
-                case 1:
-                    anim.SetBool("Ischeering", true);
-                    anim.SetBool("Isclapping", false);
-                    anim.SetBool("IsExcited", false);
-                    print("cheering");
-                    break;
-                case 2:
-                    anim.SetBool("Ischeering", false);
-                    anim.SetBool("Isclapping", true);
-                    anim.SetBool("IsExcited", false);
-                    print("clapping");
-                    break;
-                case 3:
-                    anim.SetBool("Ischeering", false);
-                    anim.SetBool("Isclapping", false);
-                    anim.SetBool("IsExcited", true);
-                    print("excited");
-                    break;
-            }
+            setanim(num);
+            //switch (num)
+            //{
+            //    case 1:
+            //        anim.SetBool("Ischeering", true);
+            //        anim.SetBool("Isclapping", false);
+            //        anim.SetBool("IsExcited", false);
+            //        print("cheering");
+            //        break;
+            //    case 2:
+            //        anim.SetBool("Ischeering", false);
+            //        anim.SetBool("Isclapping", true);
+            //        anim.SetBool("IsExcited", false);
+            //        print("clapping");
+            //        break;
+            //    case 3:
+            //        anim.SetBool("Ischeering", false);
+            //        anim.SetBool("Isclapping", false);
+            //        anim.SetBool("IsExcited", true);
+            //        print("excited");
+            //        break;
+            //}
             timer = 10;
         }
     }

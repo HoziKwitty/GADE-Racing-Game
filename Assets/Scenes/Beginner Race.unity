@@ -5876,8 +5876,8 @@ Transform:
   - {fileID: 3862698479756229968}
   - {fileID: 1408181058}
   - {fileID: 195091530}
-  - {fileID: 976597960}
   - {fileID: 1071319743}
+  - {fileID: 976597960}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11820,7 +11820,7 @@ MonoBehaviour:
   - {fileID: -8643544499663006776, guid: 88afc93d6ad264c4e8bd5f5c95648208, type: 3}
   - {fileID: -8643544499663006776, guid: 88afc93d6ad264c4e8bd5f5c95648208, type: 3}
   racerHolder: {fileID: 533101830}
-  baseSpeed: 80
+  baseSpeed: 55
   iterator: 5
 --- !u!4 &1392885051
 Transform:

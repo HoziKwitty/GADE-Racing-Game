@@ -42,7 +42,7 @@ public class Racer : MonoBehaviour
             // Update the racers' positions
             AICheckpointManager.instance.GetCurrentPositions();
         }
-        else if (other.gameObject.CompareTag("LapIterator"))
+        else if(other.gameObject.CompareTag("LapIterator"))
         {
             currentLap++;
 

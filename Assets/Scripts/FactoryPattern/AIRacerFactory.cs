@@ -4,7 +4,7 @@ public class AIRacerFactory : GenericFactory<AIRacer>
 {
     public GameObject racerHolder;
 
-    public int baseSpeed = 80;
+    public int baseSpeed = 55;
     public int iterator = 5;
 
     private void Awake()

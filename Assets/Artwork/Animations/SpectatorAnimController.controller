@@ -37,7 +37,7 @@ AnimatorStateTransition:
   m_Name: StartClapping
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Isclapping
+    m_ConditionEvent: IsClapping
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -149227858038365458}
@@ -62,7 +62,7 @@ AnimatorStateTransition:
   m_Name: StartCheering_2
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Ischeering
+    m_ConditionEvent: IsCheering
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4485015207388804388}
@@ -112,16 +112,16 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpectorAnimController
+  m_Name: SpectatorAnimController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Ischeering
+  - m_Name: IsCheering
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Isclapping
+  - m_Name: IsClapping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -155,7 +155,7 @@ AnimatorStateTransition:
   m_Name: StartClapping_2
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Isclapping
+    m_ConditionEvent: IsClapping
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -149227858038365458}
@@ -236,7 +236,7 @@ AnimatorStateTransition:
   m_Name: StartCheering
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Ischeering
+    m_ConditionEvent: IsCheering
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4485015207388804388}

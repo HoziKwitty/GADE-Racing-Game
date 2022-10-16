@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
 {
-    public float timer = 5f;
-    public int num = 0;
+    float timer = 5f;
+    int num = 0;
 
-    private Animator anim;
+    Animator anim;
 
     private void Start()
     {

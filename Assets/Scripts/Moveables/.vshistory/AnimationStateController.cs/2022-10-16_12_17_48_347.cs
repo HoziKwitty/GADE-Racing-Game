@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
 {
-    public float timer = 5f;
-    public int num = 0;
+    float timer = 5f;
+    int num = 0;
 
-    private Animator anim;
+    Animator anim;
 
-    private void Start()
+    void Start()
     {
         anim = GetComponent<Animator>();
 
@@ -17,7 +17,7 @@ public class AnimationStateController : MonoBehaviour
         SetState(num);
     }
 
-    private void SetState(int inNum)
+    void SetState(int inNum)
     {
         switch (inNum)
         {
@@ -42,16 +42,35 @@ public class AnimationStateController : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         timer -= 1 * Time.deltaTime;
-
-        if (timer < 0)
+        if(timer < 0)
         {
             num = Random.Range(1, 4);
-
+            print(num);
             SetState(num);
-
+            //switch (num)
+            //{
+            //    case 1:
+            //        anim.SetBool("Ischeering", true);
+            //        anim.SetBool("Isclapping", false);
+            //        anim.SetBool("IsExcited", false);
+            //        print("cheering");
+            //        break;
+            //    case 2:
+            //        anim.SetBool("Ischeering", false);
+            //        anim.SetBool("Isclapping", true);
+            //        anim.SetBool("IsExcited", false);
+            //        print("clapping");
+            //        break;
+            //    case 3:
+            //        anim.SetBool("Ischeering", false);
+            //        anim.SetBool("Isclapping", false);
+            //        anim.SetBool("IsExcited", true);
+            //        print("excited");
+            //        break;
+            //}
             timer = 10;
         }
     }

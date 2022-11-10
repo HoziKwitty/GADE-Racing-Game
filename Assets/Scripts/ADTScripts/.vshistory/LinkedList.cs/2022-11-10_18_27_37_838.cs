@@ -76,9 +76,9 @@ namespace ADTLinkedList
             Size += 1;
         }
 
-        public X SearchForIndex(int index)
+        public int SearchForIndex(int index)
         {
-            X returnNode = default(X);
+            int returnNode = -1;
 
             Node<X> currentNode = Head;
 
@@ -88,7 +88,7 @@ namespace ADTLinkedList
             {
                 if (index == inIndex)
                 {
-                    returnNode = currentNode.Data;
+                    returnNode = Convert.ToInt32(currentNode.Data);
                     break;
                 }
                 else
@@ -122,28 +122,6 @@ namespace ADTLinkedList
                         returnNode = currentNode.NextNode.Data;
                         break;
                     }
-                }
-                else
-                {
-                    currentNode = currentNode.NextNode;
-                }
-            }
-
-            return returnNode;
-        }
-
-        public Node<X> SearchForNode(X search)
-        {
-            Node<X> returnNode = null;
-
-            Node<X> currentNode = Head;
-
-            while (currentNode != null)
-            {
-                if (currentNode.Data.Equals(search))
-                {
-                    returnNode = currentNode;
-                    break;
                 }
                 else
                 {

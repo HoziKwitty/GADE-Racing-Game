@@ -138,6 +138,8 @@ namespace ADTLinkedList
 
             Node<X> currentNode = Head;
 
+            int inIndex = 0;
+
             while (currentNode != null)
             {
                 if (currentNode.Data.Equals(search))
@@ -149,6 +151,8 @@ namespace ADTLinkedList
                 {
                     currentNode = currentNode.NextNode;
                 }
+
+                inIndex++;
             }
 
             return returnNode;

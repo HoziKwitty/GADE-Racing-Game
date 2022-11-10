@@ -142,8 +142,16 @@ namespace ADTLinkedList
             {
                 if (currentNode.Data.Equals(search))
                 {
-                    returnNode = currentNode;
-                    break;
+                    if (currentNode.NextNode == null)
+                    {
+                        returnNode = Head;
+                        break;
+                    }
+                    else
+                    {
+                        returnNode = currentNode.NextNode;
+                        break;
+                    }
                 }
                 else
                 {

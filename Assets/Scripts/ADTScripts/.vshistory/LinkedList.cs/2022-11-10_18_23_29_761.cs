@@ -1,5 +1,4 @@
 using Node;
-using System;
 using UnityEngine;
 
 namespace ADTLinkedList
@@ -79,6 +78,7 @@ namespace ADTLinkedList
         public X SearchForIndex(int index)
         {
             X returnNode = default(X);
+            Debug.Log(default(X));
 
             Node<X> currentNode = Head;
 
@@ -122,28 +122,6 @@ namespace ADTLinkedList
                         returnNode = currentNode.NextNode.Data;
                         break;
                     }
-                }
-                else
-                {
-                    currentNode = currentNode.NextNode;
-                }
-            }
-
-            return returnNode;
-        }
-
-        public Node<X> SearchForNode(X search)
-        {
-            Node<X> returnNode = null;
-
-            Node<X> currentNode = Head;
-
-            while (currentNode != null)
-            {
-                if (currentNode.Data.Equals(search))
-                {
-                    returnNode = currentNode;
-                    break;
                 }
                 else
                 {

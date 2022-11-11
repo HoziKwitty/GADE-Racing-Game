@@ -76,6 +76,11 @@ namespace ADTLinkedList
             Size += 1;
         }
 
+        public bool Contains(X data)
+        {
+
+        }
+
         public X SearchForIndex(int index)
         {
             X returnNode = default(X);
@@ -180,9 +185,9 @@ namespace ADTLinkedList
             return returnNode;
         }
 
-        public bool Contains(X search)
+        public X Search(X search)
         {
-            bool returnBool = false;
+            Node<X> returnNode = null;
 
             Node<X> currentNode = Head;
 
@@ -190,7 +195,7 @@ namespace ADTLinkedList
             {
                 if (currentNode.Data.Equals(search))
                 {
-                    returnBool = true;
+                    returnNode = currentNode;
                     break;
                 }
                 else
@@ -199,7 +204,7 @@ namespace ADTLinkedList
                 }
             }
 
-            return returnBool;
+            return returnNode;
         }
 
         // DEBUGGING

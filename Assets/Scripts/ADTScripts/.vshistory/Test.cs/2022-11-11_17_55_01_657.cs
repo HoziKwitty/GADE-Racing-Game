@@ -20,7 +20,6 @@ public class Test : MonoBehaviour
         graph.CreateNode(6);
         graph.CreateNode(7);
         graph.CreateNode(8);
-        graph.CreateNode(-1);
 
         graph.CreateEdge(1, 3);
         graph.CreateEdge(3, 6);

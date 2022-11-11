@@ -5,7 +5,7 @@ public class GraphNode
 {
     private int data;
 
-    public int Data { 
+    public int GetData { 
         get { return data; } 
         set { data = value; } 
     }
@@ -18,23 +18,28 @@ public class GraphNode
         neighbours = new LinkedList<GraphNode>();
     }
 
-    public void AddNeighbour(GraphNode nb)
+    public bool AddNeighbour(GraphNode nb)
     {
         if (neighbours.SearchForNode(nb) != null)
         {
-            return;
+            return false;
         }
-
-        neighbours.AddToTail(nb);
+        else
+        {
+            neighbours.AddToTail(nb);
+            return true;
+        }
     }
 
     public override string ToString()
     {
-        string st = "[Node Value: " + data + " with Neighbours ";
+        string st = "[Node Value: " + data;
 
         for (int i = 0; i < neighbours.Size; i++)
         {
-            st += " -> " + neighbours.SearchForNodeIndex(i).Data.Data;
+            st += " -> " + neighbours.SearchForNodeIndex(i).Data.data;
+
+            Debug.Log(neighbours.SearchForNodeIndex(i).Data.data);
         }
         st += "]";
 

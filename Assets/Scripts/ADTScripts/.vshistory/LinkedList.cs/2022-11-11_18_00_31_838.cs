@@ -28,7 +28,9 @@ namespace ADTLinkedList
             private set => size = value;
         }
 
-        public LinkedList() { }
+        public LinkedList() {
+            Size = 0;
+        }
 
         public LinkedList(Node<X> head)
         {

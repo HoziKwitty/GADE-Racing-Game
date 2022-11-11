@@ -114,7 +114,7 @@ namespace ADTLinkedList
             {
                 if (index == inIndex)
                 {
-                    returnNode = currentNode;
+                    returnNode = currentNode.Data;
                     break;
                 }
                 else
@@ -178,28 +178,6 @@ namespace ADTLinkedList
             }
 
             return returnNode;
-        }
-
-        public bool Contains(X search)
-        {
-            bool returnBool = false;
-
-            Node<X> currentNode = Head;
-
-            while (currentNode != null)
-            {
-                if (currentNode.Data.Equals(search))
-                {
-                    returnBool = true;
-                    break;
-                }
-                else
-                {
-                    currentNode = currentNode.NextNode;
-                }
-            }
-
-            return returnBool;
         }
 
         // DEBUGGING

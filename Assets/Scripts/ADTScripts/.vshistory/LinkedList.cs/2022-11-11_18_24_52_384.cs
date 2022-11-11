@@ -180,6 +180,28 @@ namespace ADTLinkedList
             return returnNode;
         }
 
+        public X Search(X search)
+        {
+            X returnNode = default(X);
+
+            Node<X> currentNode = Head;
+
+            while (currentNode != null)
+            {
+                if (currentNode.Data.Equals(search))
+                {
+                    returnNode = currentNode;
+                    break;
+                }
+                else
+                {
+                    currentNode = currentNode.NextNode;
+                }
+            }
+
+            return returnNode;
+        }
+
         public bool Contains(X search)
         {
             bool returnBool = false;

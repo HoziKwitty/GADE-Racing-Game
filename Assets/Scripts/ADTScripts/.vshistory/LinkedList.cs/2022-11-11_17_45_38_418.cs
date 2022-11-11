@@ -180,7 +180,7 @@ namespace ADTLinkedList
             return returnNode;
         }
 
-        public bool Contains(X search)
+        public bool Search(X search)
         {
             bool returnBool = false;
 

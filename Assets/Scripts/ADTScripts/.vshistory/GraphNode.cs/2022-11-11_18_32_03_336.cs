@@ -18,14 +18,17 @@ public class GraphNode
         neighbours = new LinkedList<GraphNode>();
     }
 
-    public void AddNeighbour(GraphNode nb)
+    public bool AddNeighbour(GraphNode nb)
     {
         if (neighbours.SearchForNode(nb) != null)
         {
-            return;
+            return false;
         }
-
-        neighbours.AddToTail(nb);
+        else
+        {
+            neighbours.AddToTail(nb);
+            return true;
+        }
     }
 
     public override string ToString()

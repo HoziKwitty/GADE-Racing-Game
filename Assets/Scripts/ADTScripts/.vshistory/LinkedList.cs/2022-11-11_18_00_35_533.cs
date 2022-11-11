@@ -28,11 +28,14 @@ namespace ADTLinkedList
             private set => size = value;
         }
 
-        public LinkedList() { }
+        public LinkedList() {
+            Size = 0;
+        }
 
         public LinkedList(Node<X> head)
         {
             this.head = head;
+            Size = 0;
         }
 
         public void AddToHead(X data)

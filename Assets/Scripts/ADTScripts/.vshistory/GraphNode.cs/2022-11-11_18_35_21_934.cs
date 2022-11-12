@@ -28,7 +28,6 @@ public class GraphNode
         neighbours.AddToTail(nb);
     }
 
-    // DEBUGGING
     public override string ToString()
     {
         string st = "[Node Value: " + data + " with Neighbours ";

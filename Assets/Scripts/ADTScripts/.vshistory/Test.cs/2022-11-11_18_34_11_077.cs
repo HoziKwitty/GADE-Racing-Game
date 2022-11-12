@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Test : MonoBehaviour
 {
-    private Graph graph;
+    private StandardGraph graph;
     public Text display;
 
     private void Start()
     {
-        graph = new Graph();
+        graph = new StandardGraph();
 
         graph.CreateNode(1);
         graph.CreateNode(2);

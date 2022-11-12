@@ -7,7 +7,10 @@ public class Graph
     [SerializeField]
     private LinkedList<GraphNode> nodes = new LinkedList<GraphNode>();
 
-    public Graph() { }
+    public StandardGraph()
+    {
+
+    }
 
     public bool CreateNode(int value)
     {
@@ -59,7 +62,6 @@ public class Graph
         return null;
     }
 
-    // DEBUGGING
     public override string ToString()
     {
         string st = "HEADER\n";

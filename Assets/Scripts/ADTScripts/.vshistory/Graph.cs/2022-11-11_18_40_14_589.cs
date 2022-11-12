@@ -1,15 +1,13 @@
 using ADTLinkedList;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class StandardGraph
+public class Graph
 {
     [SerializeField]
     private LinkedList<GraphNode> nodes = new LinkedList<GraphNode>();
 
-    public StandardGraph()
-    {
-
-    }
+    public Graph() { }
 
     public bool CreateNode(int value)
     {

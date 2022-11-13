@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AIRacerFactory : GenericFactory<AIRacer>
 {
+    public Vector3 spawnBeginner = new Vector3(73, 55, 100);
+    public Vector3 spawnAdvanced = new Vector3(0, 1.45f, 5.3f);
+
     public GameObject racerHolder;
 
     public int baseSpeed = 55;
@@ -9,16 +13,35 @@ public class AIRacerFactory : GenericFactory<AIRacer>
 
     private void Awake()
     {
-        for (int i = 0; i < prefab.Length; i++)
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene.Equals("Advanced Race"))
         {
-            var inst = base.GetNewInstance();
-            inst.transform.position = new Vector3(73, 55, 100);
-            inst.transform.Rotate(0, 180, 0, Space.Self);
+            for (int i = 0; i < prefab.Length; i++)
+            {
+                var inst = base.GetNewInstance();
+                inst.transform.position = spawnAdvanced;
+                inst.transform.Rotate(0, 180, 0, Space.Self);
 
-            inst.transform.parent = racerHolder.transform;
+                inst.transform.parent = racerHolder.transform;
 
-            inst.GetComponent<AIRacer>().speed = baseSpeed;
-            baseSpeed += iterator;
+                inst.GetComponent<AIRacer>().speed = baseSpeed;
+                baseSpeed += iterator;
+            }
+        }
+        else if (currentScene.Equals("Beginner Race"))
+        {
+            for (int i = 0; i < prefab.Length; i++)
+            {
+                var inst = base.GetNewInstance();
+                inst.transform.position = spawnBeginner;
+                inst.transform.Rotate(0, 180, 0, Space.Self);
+
+                inst.transform.parent = racerHolder.transform;
+
+                inst.GetComponent<AIRacer>().speed = baseSpeed;
+                baseSpeed += iterator;
+            }
         }
     }
 }

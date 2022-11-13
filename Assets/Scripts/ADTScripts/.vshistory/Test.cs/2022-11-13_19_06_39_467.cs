@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Test : MonoBehaviour
 {
+    private int length = 50;
+
     private Graph graph;
     public Text display;
 
@@ -12,15 +14,8 @@ public class Test : MonoBehaviour
     {
         graph = new Graph();
 
-        graph.CreateNode(1);
-        graph.CreateNode(2);
-        graph.CreateNode(3);
-        graph.CreateNode(4);
-        graph.CreateNode(5);
-        graph.CreateNode(6);
-        graph.CreateNode(7);
-        graph.CreateNode(8);
-        graph.CreateNode(-1);
+        CreateNodeArray(length);
+        CreateEdgeArray();
 
         graph.CreateEdge(1, 3);
         graph.CreateEdge(3, 6);
@@ -31,5 +26,22 @@ public class Test : MonoBehaviour
         graph.CreateEdge(7, 8);
 
         display.text = graph.ToString();
+    }
+
+    private void CreateNodeArray(int number)
+    {
+        // Create nodes
+        for (int i = 1; i <= number; i++)
+        {
+            graph.CreateNode(i);
+        }
+
+        // Buffer node
+        graph.CreateNode(-1);
+    }
+
+    private void CreateEdgeArray()
+    {
+
     }
 }

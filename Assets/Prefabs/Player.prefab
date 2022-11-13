@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1968491206}
   - component: {fileID: 1968491205}
   - component: {fileID: 1968491204}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: FollowObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,6 @@ MonoBehaviour:
   currentCheckpoint: {fileID: 0}
   currentInt: 0
   currentLap: 0
-  entered: 0
   driveSpeed: 400
   brakeSpeed: 50
   turnSpeed: 100
@@ -220,7 +219,6 @@ MonoBehaviour:
   currentCheckpoint: {fileID: 0}
   currentInt: 0
   currentLap: 0
-  entered: 0
 --- !u!1 &7314163709745936110
 GameObject:
   m_ObjectHideFlags: 0

@@ -526,10 +526,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
+  nma: {fileID: 4764967076279536735}
   currentCheckpoint: {fileID: 0}
   currentInt: 0
   currentLap: 0
-  entered: 0
   speed: 0
 --- !u!114 &7051410618044609242
 MonoBehaviour:
@@ -544,10 +544,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
+  nma: {fileID: 4764967076279536735}
   currentCheckpoint: {fileID: 0}
   currentInt: 0
   currentLap: 0
-  entered: 0
 --- !u!1 &8470578889113885370
 GameObject:
   m_ObjectHideFlags: 0

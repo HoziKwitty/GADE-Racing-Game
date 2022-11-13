@@ -104,55 +104,7 @@ public class AIAdvancedManager : MonoBehaviour
 
     public void GetCurrentPositions()
     {
-        GameObject temp = null;
 
-        // Order array
-        for (int i = rcCount; i >= 0; i--)
-        {
-            for (int j = 0; j < rcCount - 1; j++)
-            {
-                Racer racer1 = racerPositions[j].GetComponent<Racer>();
-                Racer racer2 = racerPositions[j + 1].GetComponent<Racer>();
-
-                // Check current checkpoint values
-                // First: check lap number
-                if (racer1.currentLap < racer2.currentLap)
-                {
-                    temp = racerPositions[j];
-                    racerPositions[j] = racerPositions[j + 1];
-                    racerPositions[j + 1] = temp;
-                }
-                else if (racer1.currentLap == racer2.currentLap)
-                {
-                    // Second: check checkpoint number
-                    if (racer1.currentInt < racer2.currentInt)
-                    {
-                        temp = racerPositions[j];
-                        racerPositions[j] = racerPositions[j + 1];
-                        racerPositions[j + 1] = temp;
-                    }
-                    else if (racer1.currentInt == racer2.currentInt)
-                    {
-                        // Third: check distance to next waypoint
-                        float distance1 = Vector3.Distance(racer1.currentCheckpoint.transform.position, racer1.transform.position);
-                        float distance2 = Vector3.Distance(racer2.currentCheckpoint.transform.position, racer2.transform.position);
-
-                        if (distance1 > distance2)
-                        {
-                            temp = racerPositions[j];
-                            racerPositions[j] = racerPositions[j + 1];
-                            racerPositions[j + 1] = temp;
-                        }
-                    }
-                }
-            }
-        }
-
-        // Assign positions
-        for (int i = 1; i <= rcCount; i++)
-        {
-            racerPositions[i - 1].GetComponent<Racer>().position = i;
-        }
 
         DisplayPlayerPosition();
     }
@@ -194,6 +146,7 @@ public class AIAdvancedManager : MonoBehaviour
 
         // Choose random neighbour
         int rnd = Random.Range(0, neighbours.Size);
+        Debug.Log(rnd);
 
         // Get the next GraphNode
         GraphNode next = neighbours.SearchForIndex(rnd);

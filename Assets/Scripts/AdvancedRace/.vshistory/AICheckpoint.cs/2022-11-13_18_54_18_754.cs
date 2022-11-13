@@ -5,5 +5,4 @@ using UnityEngine;
 public class AICheckpoint : MonoBehaviour
 {
     public int value;
-    public int progression;
 }

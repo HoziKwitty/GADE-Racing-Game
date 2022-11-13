@@ -194,6 +194,7 @@ public class AIAdvancedManager : MonoBehaviour
 
         // Choose random neighbour
         int rnd = Random.Range(0, neighbours.Size);
+        Debug.Log(rnd);
 
         // Get the next GraphNode
         GraphNode next = neighbours.SearchForIndex(rnd);

@@ -37,19 +37,10 @@ public class Racer : MonoBehaviour
                     nma.destination = currentCheckpoint.transform.position;
                 }
 
-                currentInt = other.GetComponent<AICheckpoint>().progression;
+                currentInt = other.GetComponent<AICheckpoint>().value;
 
                 // Update the racers' positions
                 AIAdvancedManager.instance.GetCurrentPositions();
-            }
-            else if (other.gameObject.CompareTag("LapIterator"))
-            {
-                currentLap++;
-
-                if (gameObject.CompareTag("Hero"))
-                {
-                    AIAdvancedManager.instance.UpdateLapCounter(currentLap);
-                }
             }
         }
         // BEGINNER RACE EXECUTION

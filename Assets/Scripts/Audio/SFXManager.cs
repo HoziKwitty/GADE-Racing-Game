@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SFXManager : MonoBehaviour
 {
@@ -8,24 +9,25 @@ public class SFXManager : MonoBehaviour
 
     public AudioSource source;
 
-    public List<AudioSource> AudioClips = new List<AudioSource>();
+    public List<AudioClip> AudioClips = new List<AudioClip>();
 
 
     private void Awake()
     {
         inst = this;
-        Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
-
     }
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        var audioClips = new Dictionary<string, AudioClip>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (var audio in AudioClips)
+        {
+            audioClips.Add(audio.name, audio);
+        }
+
+        source = GetComponent<AudioSource>();
+        source.PlayOneShot(audioClips["Background_music"]);
+
     }
 }
